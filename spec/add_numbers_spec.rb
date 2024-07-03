@@ -29,5 +29,9 @@ describe AddNumbers do
     it "should add all the given digits that are comma as well as \n separated and delimeter specified" do
       expect(@an.add("//;\n1;2")).to eq 3
     end
+
+    it "should raise the error for negative numbers" do
+      expect { @an.add("-4,6,-7") }.to raise_error("negative numbers not allowed <-4,-7>")
+    end
   end
 end
