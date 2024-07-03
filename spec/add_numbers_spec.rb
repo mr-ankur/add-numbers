@@ -25,5 +25,9 @@ describe AddNumbers do
     it "should add all the given digits that are comma as well as \n separated" do
       expect(@an.add("6,4\n5,7\n9")).to eq 31
     end
+
+    it "should add all the given digits that are comma as well as \n separated and delimeter specified" do
+      expect(@an.add("//;\n1;2")).to eq 3
+    end
   end
 end

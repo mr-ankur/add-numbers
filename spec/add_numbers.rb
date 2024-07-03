@@ -1,7 +1,8 @@
 class AddNumbers
   def add(numbers)
-    if number =~ %r{\A//}
+    if numbers =~ %r{\A//}
       delimeter = numbers[2]
+      numbers = numbers[3..-1]
     else
       delimeter = ','
     end
