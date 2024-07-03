@@ -1,7 +1,13 @@
 class AddNumbers
   def add(numbers)
-    # seperation with comma(,)
-    array = numbers.split(',')
+    if number =~ %r{\A//}
+      delimeter = numbers[2]
+    else
+      delimeter = ','
+    end
+
+    # seperation with delemeter
+    array = numbers.split(delimeter)
 
     # seperation with \n
     new_array = []
