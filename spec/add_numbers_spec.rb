@@ -16,5 +16,10 @@ describe AddNumbers do
       an = AddNumbers.new
       expect(an.add("6")).to eq 6
     end
+
+    it "should add all the given digits that are comma separated" do
+      an = AddNumbers.new
+      expect(an.add("6,4,5,7,9")).to eq 31
+    end
   end
 end
