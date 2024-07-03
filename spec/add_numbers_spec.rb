@@ -2,24 +2,28 @@ require 'add_numbers'
 
 describe AddNumbers do
   context "add" do
+    before do
+      @an = AddNumbers.new
+    end
+
     it "should return not return nil when empty string" do
-      an = AddNumbers.new
-      expect(an.add("")).not_to be nil
+      expect(@an.add("")).not_to be nil
     end
 
     it "should return zero when empty string" do
-      an = AddNumbers.new
-      expect(an.add("")).to eq 0
+      expect(@an.add("")).to eq 0
     end
 
     it "should return single value as result if given in string" do
-      an = AddNumbers.new
-      expect(an.add("6")).to eq 6
+      expect(@an.add("6")).to eq 6
     end
 
     it "should add all the given digits that are comma separated" do
-      an = AddNumbers.new
-      expect(an.add("6,4,5,7,9")).to eq 31
+      expect(@an.add("6,4,5,7,9")).to eq 31
+    end
+
+    it "should add all the given digits that are comma as well as \n separated" do
+      expect(@an.add("6,4\n5,7\n9")).to eq 31
     end
   end
 end
