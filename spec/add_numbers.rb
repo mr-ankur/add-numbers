@@ -16,6 +16,11 @@ class AddNumbers
       new_array << a.split("\n")
     end
     array = new_array.flatten
+
+    negative_numbers = array.select { |a| a.to_i < 0}
+
+    raise "negative numbers not allowed <#{negative_numbers.join(',')}>" unless negative_numbers.length.zero?
+
     return 0 if array.length.zero?
 
     array.map(&:to_i).sum
